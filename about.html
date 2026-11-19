@@ -14,10 +14,20 @@
 </style>
 </head>
 <body>
-<h1>Thumbnails</h1>
-<div class="version">Version 1.7.37</div>
-<div class="author"><strong>Created by Amin Eftegarie</strong><br><a href="mailto:amin@eftegarie.com">amin@eftegarie.com</a><br><a href="https://eftegarie.com/">eftegarie.com</a></div>
-<p>See thumbnails for any video, and click a thumb to jump to that point. You can also change the amount of thumbnails using a simple slider, from 10 all the way to 100. Hover a thumbnail to preview that part of the video (needs ffmpeg).</p>
-<p class="muted">Plugin identifier: com.amin.thumbnail</p>
+<h1 data-en="Thumbnails" data-zh="缩略图">Thumbnails</h1>
+<div class="version"><span data-en="Version" data-zh="版本">Version</span> 1.7.38</div>
+<div class="author"><span data-en="Created by" data-zh="作者">Created by</span> <strong>Amin Eftegarie</strong><br><a href="mailto:amin@eftegarie.com">amin@eftegarie.com</a><br><a href="https://eftegarie.com/">eftegarie.com</a></div>
+<p data-en="See thumbnails for any video, and click a thumb to jump to that point. You can also change the amount of thumbnails using a simple slider, from 10 all the way to 100. Hover a thumbnail to preview that part of the video (needs ffmpeg)." data-zh="查看任意视频的缩略图，点击缩略图即可跳转到对应位置。还可以用简单的滑块调整缩略图数量，从 10 张一直到 100 张。将鼠标停在缩略图上可预览该片段（需要 ffmpeg）。">See thumbnails for any video, and click a thumb to jump to that point. You can also change the amount of thumbnails using a simple slider, from 10 all the way to 100. Hover a thumbnail to preview that part of the video (needs ffmpeg).</p>
+<p class="muted"><span data-en="Plugin identifier" data-zh="插件标识符">Plugin identifier</span>: com.amin.thumbnail</p>
+<script>
+  (function () {
+    const zh = /^zh/i.test(navigator.language || '');
+    document.documentElement.lang = zh ? 'zh-CN' : 'en';
+    document.title = zh ? '缩略图 — 关于' : 'Thumbnails — About';
+    document.querySelectorAll('[data-en]').forEach((el) => {
+      el.textContent = zh ? el.dataset.zh : el.dataset.en;
+    });
+  })();
+</script>
 </body>
 </html>

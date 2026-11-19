@@ -14,6 +14,7 @@ An IINA plugin that shows clickable thumbnails for each video.
 - Hover a thumbnail to play a short silent preview of that part of the video right inside it (optional, needs ffmpeg)
 - Move around with the keyboard
 - A faint tick sound as you move the slider
+- The interface follows your system language (English or Chinese)
 - Uses IINA's own thumbnail cache, so it does not create another thumbnail cache
 - The grid updates while you resize the IINA window
 
@@ -25,7 +26,7 @@ Hovering a thumbnail plays a few seconds of the video from that point, inside th
 brew install ffmpeg
 ```
 
-Turn it on or off with the **Play on hover** toggle next to **Background blur**. Without ffmpeg the toggle is greyed out and the thumbnails stay still images; everything else works as before.
+Turn it on or off with the **Play on hover** toggle next to **Background blur**. Without ffmpeg the toggle is hidden and the thumbnails stay still images; everything else works as before.
 
 ## Keyboard
 

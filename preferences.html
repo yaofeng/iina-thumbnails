@@ -3,21 +3,28 @@
 <head><meta charset="utf-8"><title>Thumbnails Preferences</title></head>
 <body>
   <div class="pref-section">
-    <label for="thumbnail-count"><strong>Thumbnail count</strong></label>
+    <label for="thumbnail-count"><strong data-en="Thumbnail count" data-zh="缩略图数量">Thumbnail count</strong></label>
     <div style="margin-top:6px">
       <select id="thumbnail-count" style="min-width:180px">
-        <option value="10">10 thumbnails</option>
-        <option value="15">15 thumbnails</option>
-        <option value="20">20 thumbnails</option>
-        <option value="30">30 thumbnails</option>
-        <option value="40">40 thumbnails</option>
-        <option value="60">60 thumbnails</option>
-        <option value="100">100 thumbnails</option>
+        <option value="10" data-en="10 thumbnails" data-zh="10 张">10 thumbnails</option>
+        <option value="15" data-en="15 thumbnails" data-zh="15 张">15 thumbnails</option>
+        <option value="20" data-en="20 thumbnails" data-zh="20 张">20 thumbnails</option>
+        <option value="30" data-en="30 thumbnails" data-zh="30 张">30 thumbnails</option>
+        <option value="40" data-en="40 thumbnails" data-zh="40 张">40 thumbnails</option>
+        <option value="60" data-en="60 thumbnails" data-zh="60 张">60 thumbnails</option>
+        <option value="100" data-en="100 thumbnails" data-zh="100 张">100 thumbnails</option>
       </select>
     </div>
-    <p class="small secondary pref-help">20 is the default. The layout automatically chooses the best number of columns to keep thumbnails large and balanced.</p>
+    <p class="small secondary pref-help" data-en="20 is the default. The layout automatically chooses the best number of columns to keep thumbnails large and balanced." data-zh="默认 20 张。布局会自动选择最佳列数，让缩略图尽量大且排列均衡。">20 is the default. The layout automatically chooses the best number of columns to keep thumbnails large and balanced.</p>
   </div>
   <script>
+    const zh = /^zh/i.test(navigator.language || '');
+    document.documentElement.lang = zh ? 'zh-CN' : 'en';
+    document.title = zh ? '缩略图设置' : 'Thumbnails Preferences';
+    document.querySelectorAll('[data-en]').forEach((el) => {
+      el.textContent = zh ? el.dataset.zh : el.dataset.en;
+    });
+
     const select = document.getElementById('thumbnail-count');
     const { preferences } = window.iina;
     const allowed = new Set([10, 15, 20, 30, 40, 60, 100]);
